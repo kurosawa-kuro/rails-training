@@ -1,24 +1,28 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+```
+bundle
+```
 
-Things you may want to cover:
 
-* Ruby version
+```
+rubocop -A
+```
 
-* System dependencies
+```
+rails db:migrate
+```
 
-* Configuration
 
-* Database creation
+```
+rails s
+```
 
-* Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+$acl = Get-Acl "tmp\cache"
+$permission = "Users","FullControl","Allow"
+$accessRule = New-Object System.Security.AccessControl.FileSystemAccessRule $permission
+$acl.SetAccessRule($accessRule)
+Set-Acl "tmp\cache" $acl
+```
