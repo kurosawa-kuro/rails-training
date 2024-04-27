@@ -1,7 +1,33 @@
-require: rubocop-rails
+AllCops:
+  # General exclusions applied across all checks.
+  Exclude:
+    - 'bin/*'                 # Exclude all files in the bin directory
+    - 'db/schema.rb'          # Exclude schema files
+    - 'vendor/**/*'           # Exclude vendor directory
+    - 'node_modules/**/*'    # Exclude node_modules directory
+
+# Specific configurations for each cop category
 Style/Documentation:
   Enabled: false
+
 Metrics/BlockLength:
   Max: 30
   Exclude:
     - 'config/environments/development.rb'
+
+# Common exclusions for multiple Metrics cops
+Metrics/CyclomaticComplexity:
+  Exclude:
+    - 'bin/*'
+
+Metrics/MethodLength:
+  Exclude:
+    - 'bin/*'
+
+Metrics/PerceivedComplexity:
+  Exclude:
+    - 'bin/*'
+
+Layout/LineLength:
+  Exclude:
+    - 'bin/*'
