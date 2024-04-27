@@ -20,6 +20,8 @@ rails s
 
 
 ```
+New-Item -Path 'tmp\cache' -ItemType Directory
+
 $acl = Get-Acl "tmp\cache"
 $permission = "Users","FullControl","Allow"
 $accessRule = New-Object System.Security.AccessControl.FileSystemAccessRule $permission
